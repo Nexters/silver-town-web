@@ -3,26 +3,38 @@
 import { useEffect } from "react";
 
 interface Props {
-  adType: string;
+  slotId: string;
+  height: React.CSSProperties["height"];
+  WrapperComponent: (children: React.ReactNode) => React.ReactNode;
 }
 
-const GoogleAd = ({ adType }: Props) => {
+const GoogleAd = ({ slotId, height, WrapperComponent }: Props) => {
   useEffect(() => {
+    if (!window.adsbygoogle || window.adsbygoogle.loaded) return;
     // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
 
-  return (
-    <div className="googleAd-container">
+  if (!slotId) {
+    console.error(
+      "nextjs-google-adsense: publisherId or slotId can't be empty for the unit",
+    );
+    return null;
+  }
+
+  if (!window.adsbygoogle) return null;
+
+  return WrapperComponent(
+    <div className="googleAd-container" style={{ height }}>
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
-        data-ad-format="fluid"
-        data-ad-layout-key="-fb+5w+4e-db+86"
+        data-ad-format="auto"
         data-ad-client={process.env.GOOGLE_ADS_CLIENT_ID}
-        data-ad-slot={adType}
+        data-full-width-responsive="true"
+        data-ad-slot={slotId}
       />
-    </div>
+    </div>,
   );
 };
 
