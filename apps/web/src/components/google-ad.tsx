@@ -21,8 +21,6 @@ const GoogleAd = ({ slotId, height, WrapperComponent }: Props) => {
     return null;
   }
 
-  if (!window.adsbygoogle) return null;
-
   return WrapperComponent(
     <div className="googleAd-container" style={{ height }}>
       <ins
