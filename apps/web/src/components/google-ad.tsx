@@ -10,7 +10,6 @@ interface Props {
 
 const GoogleAd = ({ slotId, height, WrapperComponent }: Props) => {
   useEffect(() => {
-    if (!window.adsbygoogle || window.adsbygoogle.loaded) return;
     // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
