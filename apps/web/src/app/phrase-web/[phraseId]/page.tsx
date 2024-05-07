@@ -4,6 +4,7 @@ import AppDownloadModal from "~/components/app-download-modal";
 import AppFooter from "~/components/app-footer";
 import GoAppCard from "~/components/go-app-card";
 import PhraseContent from "~/components/phrase-content";
+import PhraseWebGoogleAd from "~/components/phrase-web-google-ad";
 import Separator from "~/components/ui/separator";
 import PhraseList from "./phrase-list";
 
@@ -26,6 +27,7 @@ export default async function PhraseWebPage({
     <main className="pb-[90px]">
       <PhraseContent phrase={phrase} />
       <Separator />
+      <PhraseWebGoogleAd />
       <PhraseList currentPhraseId={params.phraseId} />
       <Separator />
       <GoAppCard />
