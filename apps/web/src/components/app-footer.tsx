@@ -1,6 +1,7 @@
 "use client";
 
 import { useAppDownloadModalStore } from "./app-download-modal";
+import EventParticipantFloatingButton from "./event-participant-floating-button";
 import { BookmarkLinearIcon, LikeLinearIcon } from "./ui/icons";
 
 export default function AppFooter() {
@@ -21,6 +22,9 @@ export default function AppFooter() {
 
   return (
     <div className="container fixed bottom-0 inset-x-0">
+      {/* <div className="flex items-center justify-center">
+        <EventParticipantFloatingButton />
+      </div> */}
       <div className="flex items-center justify-center gap-3 p-4 pb-[26px] h-[90px] bg-white">
         <button
           type="button"
