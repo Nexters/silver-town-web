@@ -6,37 +6,14 @@ import { RemoveScroll } from "react-remove-scroll";
 import { create } from "zustand";
 import { AOS_APP_LINK } from "~/constants";
 import { detectDevice } from "~/libs/detect-device";
+import {
+  ModalStatusStore,
+  getModalStatusStore,
+} from "~/libs/store/modal-status";
 import { cn } from "~/libs/utils";
 
-type ModalStatus = "mounted" | "opened" | "closed" | "unmounted";
-
-export const useAppDownloadModalStore = create<{
-  status: ModalStatus;
-  open: () => void;
-  close: () => void;
-  transferStatus: () => void;
-}>((set, get) => ({
-  status: "unmounted",
-  open: () => {
-    if (get().status === "unmounted") {
-      set({ status: "mounted" });
-    }
-  },
-  close: () => {
-    if (get().status === "opened") {
-      set({ status: "closed" });
-    }
-  },
-  transferStatus: () => {
-    const { status } = get();
-
-    if (status === "mounted") {
-      set({ status: "opened" });
-    } else if (status === "closed") {
-      set({ status: "unmounted" });
-    }
-  },
-}));
+export const useAppDownloadModalStore =
+  create<ModalStatusStore>(getModalStatusStore);
 
 export default function AppDownloadModal() {
   const { status, close, transferStatus } = useAppDownloadModalStore();
