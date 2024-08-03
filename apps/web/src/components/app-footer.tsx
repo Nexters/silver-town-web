@@ -22,9 +22,9 @@ export default function AppFooter() {
 
   return (
     <div className="container fixed bottom-0 inset-x-0">
-      {/* <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <EventParticipantFloatingButton />
-      </div> */}
+      </div>
       <div className="flex items-center justify-center gap-3 p-4 pb-[26px] h-[90px] bg-white">
         <button
           type="button"
