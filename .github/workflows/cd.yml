@@ -2,7 +2,7 @@ name: Continuous Deployment
 
 on:
   push:
-    branches: [dev]
+    branches: [dev, prod]
     paths: ["apps/web/**", "apps/back-office/**"]
 
 jobs:
