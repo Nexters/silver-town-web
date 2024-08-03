@@ -1,5 +1,6 @@
 import { Metadata, ResolvingMetadata } from "next";
 import { apis } from "~/apis";
+import AppDownloadHeader from "~/components/app-download-header";
 import AppDownloadModal from "~/components/app-download-modal";
 import AppFooter from "~/components/app-footer";
 import GoAppCard from "~/components/go-app-card";
@@ -25,6 +26,7 @@ export default async function PhraseWebPage({
 
   return (
     <main className="pb-[90px]">
+      {/* <AppDownloadHeader /> */}
       <PhraseContent phrase={phrase} />
       <Separator />
       {/* <PhraseWebGoogleAd /> */}

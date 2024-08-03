@@ -100,7 +100,7 @@ export function Close({ width, height, ...rest }: SVGProps<SVGSVGElement>) {
     <svg
       width={newWidth}
       height={newHeight}
-      viewBox={`0 0 ${newWidth} ${newHeight}`}
+      viewBox="0 0 28 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
