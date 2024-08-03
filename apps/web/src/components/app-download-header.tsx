@@ -22,7 +22,7 @@ const AppDownloadHeader = () => {
       </div>
       <button
         type="button"
-        className="bg-[#00B998] px-[16px] py-[8px] rounded-[8px]"
+        className="bg-[#00B998] ml-[12px] px-[16px] py-[8px] rounded-[8px]"
         onClick={open}
       >
         <span className="text-[#ffffff] text-[16px] font-medium leading-[24px] text-center">

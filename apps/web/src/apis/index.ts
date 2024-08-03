@@ -1,6 +1,7 @@
 import { ApiClient, ApiData, OnResponseError } from "@daily-phrase/api";
 import { ResponseError } from "./apis.type";
 import { fetchErrorCreator } from "./config/fetch-error-creator";
+import { EventApi } from "./event-api";
 import { PhraseApi } from "./phrase-api";
 
 const onRequestSuccess = (requestInit: RequestInit): RequestInit => {
@@ -46,4 +47,5 @@ const httpClient = new ApiClient({
 
 export const apis = {
   phraseApi: new PhraseApi(httpClient),
+  eventApi: new EventApi(httpClient),
 };

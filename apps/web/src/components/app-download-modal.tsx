@@ -42,7 +42,7 @@ export default function AppDownloadModal() {
             className={cn(
               status === "mounted" && "animate-fade-in",
               status === "closed" && "animate-fade-out",
-              "fixed inset-0 bg-black bg-opacity-40",
+              "z-[1000] fixed inset-0 bg-black bg-opacity-40",
             )}
             onClick={() => onClickClose(false)}
           />
@@ -50,7 +50,7 @@ export default function AppDownloadModal() {
             className={cn(
               status === "mounted" && "animate-fade-in",
               status === "closed" && "animate-stage-out",
-              "bg-white fixed -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[272px] overflow-hidden rounded-[8px] p-4 pt-[21px] text-[16px] leading-[22px]",
+              "z-[1000] bg-white fixed -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[272px] overflow-hidden rounded-[8px] p-4 pt-[21px] text-[16px] leading-[22px]",
             )}
             onAnimationEnd={transferStatus}
           >

@@ -1,5 +1,6 @@
 export * from "./fetch";
 export * from "./phrase.type";
+export * from "./event.type";
 
 export interface ApiData<T> {
   isSuccess: boolean;

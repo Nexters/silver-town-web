@@ -3,6 +3,7 @@ import { apis } from "~/apis";
 import AppDownloadHeader from "~/components/app-download-header";
 import AppDownloadModal from "~/components/app-download-modal";
 import AppFooter from "~/components/app-footer";
+import EventBanner from "~/components/event-banner";
 import GoAppCard from "~/components/go-app-card";
 import PhraseContent from "~/components/phrase-content";
 import PhraseWebGoogleAd from "~/components/phrase-web-google-ad";
@@ -26,7 +27,10 @@ export default async function PhraseWebPage({
 
   return (
     <main className="pb-[90px]">
-      {/* <AppDownloadHeader /> */}
+      {/* <div className="sticky top-0 z-[1]">
+        <AppDownloadHeader />
+        <EventBanner />
+      </div> */}
       <PhraseContent phrase={phrase} />
       <Separator />
       {/* <PhraseWebGoogleAd /> */}
