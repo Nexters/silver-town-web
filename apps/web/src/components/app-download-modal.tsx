@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 import { RemoveScroll } from "react-remove-scroll";
 import { create } from "zustand";
-import { AOS_APP_LINK } from "~/constants";
-import { detectDevice } from "~/libs/detect-device";
+import { modalCloseEvent } from "~/libs/clarity";
 import {
   ModalStatusStore,
   getModalStatusStore,
 } from "~/libs/store/modal-status";
+import { onAppDownloadClick } from "~/libs/utils";
 import { cn } from "~/libs/utils";
 
 export const useAppDownloadModalStore =
@@ -21,19 +21,12 @@ export default function AppDownloadModal() {
 
   const onClickDownloadApp = () => {
     close();
-    // TODO: 앱이 있으면 앱 열기, 없으면 playstore로 이동
-    const device = detectDevice();
-    if (device === "android") window.open(AOS_APP_LINK);
-    else if (device !== null) router.push("/ios-not-supported");
-    if (device !== null) window.clarity?.("event", `install-modal-${device}`);
+    onAppDownloadClick(router.push);
   };
 
   const onClickClose = (isButtonClick: boolean) => {
     close();
-    window.clarity?.(
-      "event",
-      isButtonClick ? "install-modal-close-button" : "install-modal-dim-close",
-    );
+    modalCloseEvent(isButtonClick);
   };
 
   if (status === "unmounted") {
