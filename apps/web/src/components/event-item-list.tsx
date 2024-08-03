@@ -25,7 +25,7 @@ const EventItemList = () => {
       {isLoading
         ? [...Array(3)].map((_, i) => {
             return (
-              <div key={i} className="mt-2 pb-4 space-y-2.5">
+              <div key={i} className="space-y-2">
                 <div className="animate-pulse bg-[#ececec] w-[140px] h-[140px] rounded-[8px]" />
                 <div className="flex">
                   <div className="animate-pulse bg-[#ececec] w-[41px] h-[41px] rounded-[8px]" />
