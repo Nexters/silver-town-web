@@ -9,10 +9,10 @@ import {
   ModalStatusStore,
   getModalStatusStore,
 } from "~/libs/store/modal-status";
-import { onAppDownloadClick } from "~/libs/utils";
 import { cn } from "~/libs/utils";
 import { getModalAnimationClassNames } from "~/styles/utils";
 import DimmedBackground from "./ui/dimmed-background";
+import { onAppDownloadClick } from "~/libs/app-download-click";
 
 export const useAppDownloadModalStore =
   create<ModalStatusStore>(getModalStatusStore);

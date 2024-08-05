@@ -1,3 +1,5 @@
+"use client";
+
 import { StateCreator } from "zustand";
 import { ModalStatus } from "~/types/modal-status";
 

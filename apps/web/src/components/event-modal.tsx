@@ -9,11 +9,12 @@ import {
   ModalStatusStore,
   getModalStatusStore,
 } from "~/libs/store/modal-status";
-import { cn, onAppDownloadClick } from "~/libs/utils";
+import { cn } from "~/libs/utils";
 import { getModalAnimationClassNames } from "~/styles/utils";
 import EventItemList from "./event-item-list";
 import DimmedBackground from "./ui/dimmed-background";
 import { Close } from "./ui/icons";
+import { onAppDownloadClick } from "~/libs/app-download-click";
 
 export const useEventModalStore = create<ModalStatusStore>(getModalStatusStore);
 
