@@ -1,3 +1,5 @@
+"use client";
+
 import { Prize } from "@daily-phrase/api";
 import React from "react";
 import GiftIcon from "src/assets/svg/Ticket.svg";
