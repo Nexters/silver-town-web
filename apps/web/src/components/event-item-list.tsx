@@ -10,9 +10,15 @@ const EventItemList = () => {
   const [eventList, setEventList] = useState<Array<Prize>>([]);
 
   const getPrizeList = async () => {
-    const res = await apis.eventApi.getPrizeList({ baseURL: "" });
+    // const res = await apis.eventApi.getPrizeList({ baseURL: "" });
+    const res = await fetch("/api/v1/events/prizes", {
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    const { data } = await res.json();
     setIsLoading(false);
-    setEventList(res.result.prizeList);
+    setEventList(data.result.prizeList);
   };
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
