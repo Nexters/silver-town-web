@@ -10,7 +10,7 @@ const EventItemList = () => {
   const [eventList, setEventList] = useState<Array<Prize>>([]);
 
   const getPrizeList = async () => {
-    const res = await apis.eventApi.getPrizeList();
+    const res = await apis.eventApi.getPrizeList({ baseURL: "" });
     setIsLoading(false);
     setEventList(res.result.prizeList);
   };
