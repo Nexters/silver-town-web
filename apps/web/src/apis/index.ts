@@ -5,19 +5,12 @@ import { EventApi } from "./event-api";
 import { PhraseApi } from "./phrase-api";
 
 const onRequestSuccess = (requestInit: RequestInit): RequestInit => {
-  if (typeof window !== "undefined" && requestInit.headers) {
-    const copyRequestInit: RequestInit = JSON.parse(
-      JSON.stringify(requestInit),
-    );
-    copyRequestInit.headers = {
-      ...copyRequestInit.headers,
-      Authorization: "Bearer ",
-    };
-    return copyRequestInit;
-  }
-  // server side getCookie logic
-  console.log("server side");
-  return requestInit;
+  const copyRequestInit: RequestInit = JSON.parse(JSON.stringify(requestInit));
+  copyRequestInit.headers = {
+    ...copyRequestInit.headers,
+    Authorization: "Bearer ",
+  };
+  return copyRequestInit;
 };
 
 const onResponseError: OnResponseError<
