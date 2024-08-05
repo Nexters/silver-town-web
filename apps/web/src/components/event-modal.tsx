@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { RemoveScroll } from "react-remove-scroll";
 import { create } from "zustand";
+import { onAppDownloadClick } from "~/libs/app-download-click";
 import {
   ModalStatusStore,
   getModalStatusStore,
@@ -14,7 +15,6 @@ import { getModalAnimationClassNames } from "~/styles/utils";
 import EventItemList from "./event-item-list";
 import DimmedBackground from "./ui/dimmed-background";
 import { Close } from "./ui/icons";
-import { onAppDownloadClick } from "~/libs/app-download-click";
 
 export const useEventModalStore = create<ModalStatusStore>(getModalStatusStore);
 
@@ -44,7 +44,7 @@ const EventModal = () => {
       <div
         className={cn(
           getModalAnimationClassNames(status),
-          "z-[1000] max-w-[calc(100%-32px)] px-[16px] flex flex-col items-center absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[368px] overflow-hidden",
+          "z-[1000] max-w-full px-[16px] flex flex-col items-center fixed -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[368px] overflow-hidden",
         )}
         onAnimationEnd={transferStatus}
       >
