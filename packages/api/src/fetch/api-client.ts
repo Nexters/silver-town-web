@@ -42,13 +42,9 @@ class ApiClient implements ApiClientInstance {
         ...requestConfig?.headers,
       },
     };
-    const requestConf: RequestInit =
-      this.onRequestSuccess?.(baseConf) || baseConf;
-    const fetchRoute = `${this.config?.baseURL || ""}${route}`;
-    const response: Response = await fetch(
-      `${this.config?.baseURL || ""}${route}`,
-      requestConf,
-    );
+    const requestConf = this.onRequestSuccess?.(baseConf) || baseConf;
+    const fetchRoute = `${requestConf?.baseURL || ""}${route}`;
+    const response: Response = await fetch(fetchRoute, requestConf);
     /** @todo timeout 만들기 with AbortController */
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     let data: any;
