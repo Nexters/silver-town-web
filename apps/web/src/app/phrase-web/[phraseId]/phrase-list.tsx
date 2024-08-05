@@ -16,13 +16,8 @@ export default function PhraseList({
 
   const requestPhraseList = async () => {
     // TODO: 백엔드 https 부착
-    const res = await fetch("/api/v1/phrases", {
-      headers: {
-        "content-type": "application/json",
-      },
-    });
-    const { data } = await res.json();
-    const phraseList = data.result.phraseList as Phrase[];
+    const res = await apis.phraseApi.getPhraseList(4, { baseURL: "" });
+    const phraseList = res.result.phraseList;
     const filteredPhraseList = phraseList
       .filter((phrase) => phrase.phraseId !== +currentPhraseId)
       .slice(0, 3);
