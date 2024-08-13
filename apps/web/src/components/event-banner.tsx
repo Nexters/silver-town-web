@@ -9,7 +9,7 @@ const EventBanner = async () => {
   const eventMainItem = eventList.prizeList[0];
 
   return (
-    <div className="bg-[#F4F1EA] px-[40px] py-[7px] flex items-center justify-center">
+    <div className="bg-[#F4F1EA] px-[29px] py-[5px] flex items-center justify-center">
       <BaseImage
         src={eventMainItem?.bannerImageUrl}
         width={60}

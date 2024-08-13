@@ -12,7 +12,7 @@ const DimmedBackground = ({ classNames, onClose, ...rest }: Props) => {
       {...rest}
       className={cn(
         classNames,
-        "z-[1000] fixed inset-0 bg-black bg-opacity-40",
+        "z-[1000] fixed inset-0 bg-[#000000] bg-opacity-75",
       )}
       onClick={onClose}
     />

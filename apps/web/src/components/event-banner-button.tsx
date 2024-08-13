@@ -1,7 +1,8 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React from "react";
-import { useAppDownloadModalStore } from "./app-download-modal";
+import { onAppDownloadClick } from "~/libs/app-download-click";
 import { NavigateNext } from "./ui/icons";
 
 interface Props {
@@ -9,10 +10,13 @@ interface Props {
 }
 
 const EventBannerButton = ({ eventItemName }: Props) => {
-  const { open } = useAppDownloadModalStore();
+  const router = useRouter();
+  const onClickDownloadApp = () => {
+    onAppDownloadClick(router.push);
+  };
   return (
     <button
-      onClick={open}
+      onClick={onClickDownloadApp}
       type="button"
       className="overflow-hidden flex flex-1 items-center justify-center ml-[6px]"
     >

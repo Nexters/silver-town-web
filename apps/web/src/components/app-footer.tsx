@@ -22,26 +22,7 @@ export default function AppFooter() {
 
   return (
     <div className="container fixed bottom-0 inset-x-0">
-      <div className="flex items-center justify-center">
-        <EventParticipantFloatingButton />
-      </div>
       <div className="flex items-center justify-center gap-3 p-4 pb-[26px] h-[90px] bg-white">
-        <button
-          type="button"
-          className="flex items-center justify-center"
-          style={styles.btnWrapper}
-          onClick={onLikeClick}
-        >
-          <LikeLinearIcon className="w-12 h-12" />
-        </button>
-        <button
-          type="button"
-          className="flex items-center justify-center"
-          style={styles.btnWrapper}
-          onClick={onBookmarkClick}
-        >
-          <BookmarkLinearIcon className="w-12 h-12" />
-        </button>
         <button
           type="button"
           className="flex items-center justify-center flex-1"
@@ -60,7 +41,7 @@ export default function AppFooter() {
               lineHeight: "22px",
             }}
           >
-            앱 설치하고 공유하기
+            3초 만에 경품 응모하기
           </div>
         </button>
       </div>

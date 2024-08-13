@@ -24,7 +24,7 @@ export default function GoAppCard() {
         className="mt-4 flex items-center justify-center w-[240px] h-[40px] bg-[#FFEAB1] rounded-[8px] font-semibold"
         onClick={onClick}
       >
-        글귀 보러가기
+        경품 받으러가기
       </button>
     </div>
   );

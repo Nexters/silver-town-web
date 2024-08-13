@@ -44,7 +44,7 @@ const EventModal = () => {
       <div
         className={cn(
           getModalAnimationClassNames(status),
-          "z-[1000] max-w-full px-[16px] flex flex-col items-center fixed -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[368px] overflow-hidden",
+          "z-[1000] max-w-full px-[16px] flex flex-col items-center justify-center fixed -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[368px] overflow-hidden",
         )}
         onAnimationEnd={transferStatus}
       >
@@ -63,13 +63,15 @@ const EventModal = () => {
           <div className="my-[24px] overflow-auto">
             <EventItemList />
           </div>
-          <button
-            type="button"
-            className="w-[calc(100%-48px)] mx-[16px] mb-[40px] p-[8px] flex items-center justify-center h-10 rounded-[8px] overflow-hidden font-semibold text-white text-[18px] leading-[22px] bg-[#FF7900]"
-            onClick={onClickDownloadApp}
-          >
-            앱설치하고 바로 응모
-          </button>
+          <div className="w-[calc(100%-32px)] mx-[16px]">
+            <button
+              type="button"
+              className="w-fit mx-[auto] mb-[40px] px-[44px] py-[13px] flex items-center justify-center h-10 rounded-[8px] overflow-hidden font-semibold text-white text-[18px] leading-[22px] bg-[#FF7900]"
+              onClick={onClickDownloadApp}
+            >
+              앱설치하고 바로 응모
+            </button>
+          </div>
         </div>
         <button type="button" onClick={onClickClose} className="mt-[16px]">
           <span className="underline text-[16px] leading-[19.2px] font-medium text-white">
