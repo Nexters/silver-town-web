@@ -66,7 +66,7 @@ const EventModal = () => {
           <div className="w-[calc(100%-32px)] mx-[16px]">
             <button
               type="button"
-              className="w-fit mx-[auto] mb-[40px] px-[44px] py-[13px] flex items-center justify-center h-10 rounded-[8px] overflow-hidden font-semibold text-white text-[18px] leading-[22px] bg-[#FF7900]"
+              className="w-fit h-fit mx-[auto] mb-[40px] px-[44px] py-[13px] flex items-center justify-center h-10 rounded-[8px] overflow-hidden font-semibold text-white text-[18px] leading-[22px] bg-[#FF7900]"
               onClick={onClickDownloadApp}
             >
               앱설치하고 바로 응모
