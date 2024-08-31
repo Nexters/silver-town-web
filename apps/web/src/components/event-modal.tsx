@@ -49,7 +49,7 @@ const EventModal = () => {
         onAnimationEnd={transferStatus}
       >
         <h2 className="mb-[16px] text-[24px] leading-[28.8px] font-semibold text-white">
-          8월 이벤트 오픈
+          9월 이벤트 오픈
         </h2>
         <div className={cn("z-[1000] w-full bg-[#F4F1EA] rounded-[8px]")}>
           <div className="flex justify-end px-[10px] pt-[10px] pb-[2px]">
